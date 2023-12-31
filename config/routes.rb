@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # get '/articles/:id', to: 'articles#show'
   # La ressource permet de creer les routes pour le CRUD sur ce controller
   # Chose qu'on a fait manuellement au dessus avec le index(get) et show
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   # Defines the root path route ("/")
   root 'articles#index'
 end
