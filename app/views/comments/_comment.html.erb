@@ -1,9 +1,8 @@
-  <p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-  </p>
-
-  <p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-  </p>
+<div class="card mb-2">
+  <div class="card-body">
+    <span class="fw-bold">
+<%= comment.commenter %> :
+    </span>
+    <%= comment.body %>
+  </div>
+</div>

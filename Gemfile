@@ -26,8 +26,9 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
 end
 
+gem 'hotwire-livereload'
 group :development do
-  gem 'hotwire-livereload'
+  gem 'rails_live_reload'
   gem 'web-console'
 end
 
@@ -36,5 +37,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'tailwindcss-rails', '~> 2.1'
-gem "redis"
+gem 'redis'
+
+gem 'cssbundling-rails'
+
+gem 'jsbundling-rails', '~> 1.2'
