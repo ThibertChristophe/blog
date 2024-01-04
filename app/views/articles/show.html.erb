@@ -6,10 +6,9 @@
     turbo_confirm: "Are you sure ?"
   }, class: 'btn btn-danger' %>
 
-
-<h4 class='mt-2'>Commentaires</h4>
+<% if !@article.comments.empty? %>
+<h4 class='mt-3'>Commentaires</h4>
 <%= render @article.comments %>
-
-
-<h4>Ajouter un commentaire</h4>
+<% end %>
+<h4 class='mt-3'>Ajouter un commentaire</h4>
 <%= render 'comments/form' %>

@@ -1,5 +1,5 @@
 <%= form_with model: article do |form| %>
-<div class='mb-2'>
+<div class='mb2'>
   <%= form.label :title, 'Titre', class: 'form-label' %><br>
   <%= form.text_field :title, class: 'form-control' %>
   <% article.errors.full_messages_for(:title).each do |message| %>
