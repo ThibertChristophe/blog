@@ -3,7 +3,7 @@
   <%= form.label :title, 'Titre', class: 'form-label' %><br>
   <%= form.text_field :title, class: 'form-control' %>
   <% article.errors.full_messages_for(:title).each do |message| %>
-    <div><%= message %></div>
+    <div class='text-danger'><%= message %></div>
   <% end %>
 </div>
 
@@ -11,14 +11,14 @@
   <%= form.label :body, 'Contenu', class: 'form-label' %><br>
   <%= form.text_area :body, class: 'form-control' %>
   <% article.errors.full_messages_for(:body).each do |message| %>
-    <div><%= message %></div>
+    <div class='text-danger'><%= message %></div>
   <% end %>
 </div>
 <div class='mt-2'>
   <%= form.label :online, 'Publié', class: 'form-label mx-2' %>
   <%= form.check_box :online %>
   <% article.errors.full_messages_for(:online).each do |message| %>
-    <div><%= message %></div>
+    <div class='text-danger'><%= message %></div>
   <% end %>
 </div>
 <div class="mt-4">

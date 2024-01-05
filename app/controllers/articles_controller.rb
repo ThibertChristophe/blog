@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = Article.new article_params
 
     if @article.save
       flash[:success] = 'Article créé avec succès'
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def update
-    if @article.update(article_params)
+    if @article.update article_params
       flash[:success] = 'Article mis à jour avec succès'
       redirect_to @article
     else
@@ -50,6 +50,6 @@ class ArticlesController < ApplicationController
 
   # Permet d eviter de repeter cette ligne, on va l utiliser dans le before_action
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.find params[:id]
   end
 end

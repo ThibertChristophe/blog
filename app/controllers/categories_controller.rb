@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @categorie = Categorie.new(categorie_params)
+    @categorie = Categorie.new categorie_params
 
     if @categorie.save
       flash[:success] = 'Categorie créé avec succès'
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
   def edit; end
 
   def update
-    if @categorie.update(categorie_params)
+    if @categorie.update categorie_params
       flash[:success] = 'Categorie mis à jour avec succès'
       redirect_to categories_path
     else
@@ -44,6 +44,6 @@ class CategoriesController < ApplicationController
   end
 
   def set_categorie
-    @categorie = Categorie.find(params[:id])
+    @categorie = Categorie.find params[:id]
   end
 end
