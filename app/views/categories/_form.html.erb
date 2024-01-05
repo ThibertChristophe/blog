@@ -1,0 +1,13 @@
+<%= form_with model: categorie do |form| %>
+<div class='mb2'>
+  <%= form.label :name, 'Nom', class: 'form-label' %><br>
+  <%= form.text_field :name, class: 'form-control' %>
+  <% categorie.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+</div>
+
+<div class="mt-4">
+  <%= form.submit class: 'btn btn-success'%>
+</div>
+<% end %>

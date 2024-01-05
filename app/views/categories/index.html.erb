@@ -1,0 +1,23 @@
+<h1>Liste des categories</h1>
+<%= link_to 'Ajouter une catégorie', new_category_path, class:'btn btn-success' %>
+<table class='table'>
+  <thead>
+    <tr>
+<td>Id</td>
+<td>Nom</td>
+<td>Actions</td>
+    </tr>
+
+  </thead>
+  <tbody>
+    <% @categories.each do |categorie| %>
+      <tr>
+<td><%= categorie.id %></td>
+<td><%= categorie.name %></td>
+<td><%= link_to 'Editer', edit_category_path(categorie), class: 'btn btn-primary'%>
+<%= link_to 'Supprimer', category_path(categorie), data: {turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr?'}, class: 'btn btn-danger'%>
+</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
