@@ -2,7 +2,10 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
+    # utilisation avec un scope de Article
     @articles = Article.published.all
+    # exemple avec un parametre
+    # @articles = Article.online(true).all
   end
 
   def show; end
@@ -40,10 +43,12 @@ class ArticlesController < ApplicationController
 
   private
 
+  # Permet de valider les parametres
   def article_params
     params.require(:article).permit(:title, :body, :online)
   end
 
+  # Permet d eviter de repeter cette ligne, on va l utiliser dans le before_action
   def set_article
     @article = Article.find(params[:id])
   end
