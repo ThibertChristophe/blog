@@ -10,12 +10,12 @@
 
   </thead>
   <tbody>
-    <% @categories.each do |categorie| %>
+    <% @categories.each do |category| %>
       <tr>
-<td><%= categorie.id %></td>
-<td><%= categorie.name %></td>
-<td><%= link_to 'Editer', edit_category_path(categorie), class: 'btn btn-primary'%>
-<%= link_to 'Supprimer', category_path(categorie), data: {turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr?'}, class: 'btn btn-danger'%>
+<td><%= category.id %></td>
+<td><%= category.name %></td>
+<td><%= link_to 'Editer', edit_category_path(category), class: 'btn btn-primary'%>
+<%= link_to 'Supprimer', category_path(category), data: {turbo_method: :delete, turbo_confirm: 'Êtes-vous sûr?'}, class: 'btn btn-danger'%>
 </td>
       </tr>
     <% end %>

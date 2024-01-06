@@ -1,18 +1,18 @@
 class CategoriesController < ApplicationController
-  before_action :set_categorie, only: %i[edit update destroy]
+  before_action :set_category, only: %i[edit update destroy]
 
   def index
-    @categories = Categorie.all
+    @categories = Category.all
   end
 
   def new
-    @categorie = Categorie.new
+    @category = Category.new
   end
 
   def create
-    @categorie = Categorie.new categorie_params
+    @category = Category.new category_params
 
-    if @categorie.save
+    if @category.save
       flash[:success] = 'Categorie créé avec succès'
       redirect_to categories_path
     else
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
   def edit; end
 
   def update
-    if @categorie.update categorie_params
+    if @category.update category_params
       flash[:success] = 'Categorie mis à jour avec succès'
       redirect_to categories_path
     else
@@ -32,18 +32,18 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @categorie.destroy
+    @category.destroy
     flash[:success] = 'Categorie supprimée avec succès'
     redirect_to categories_path, status: :see_other
   end
 
   private
 
-  def categorie_params
-    params.require(:categorie).permit(:name)
+  def category_params
+    params.require(:category).permit(:name)
   end
 
-  def set_categorie
-    @categorie = Categorie.find params[:id]
+  def set_category
+    @category = Category.find params[:id]
   end
 end

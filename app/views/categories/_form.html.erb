@@ -1,8 +1,8 @@
-<%= form_with model: categorie do |form| %>
+<%= form_with model: category do |form| %>
 <div class='mb2'>
   <%= form.label :name, 'Nom', class: 'form-label' %><br>
   <%= form.text_field :name, class: 'form-control' %>
-  <% categorie.errors.full_messages_for(:name).each do |message| %>
+  <% category.errors.full_messages_for(:name).each do |message| %>
     <div><%= message %></div>
   <% end %>
 </div>
