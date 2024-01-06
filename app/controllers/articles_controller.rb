@@ -6,6 +6,9 @@ class ArticlesController < ApplicationController
     @articles = Article.published.all
     # exemple avec un parametre
     # @articles = Article.online(true).all
+    # exemple si on veut que d'office on prend la categorie liée
+    # Permet de ne pas faire de requete supplementaire
+    # @articles = Article.includes(:category).all
   end
 
   def show; end
