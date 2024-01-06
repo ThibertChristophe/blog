@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  belongs_to :category
+  belongs_to :category, counter_cache: true
   has_many :comments
 
   validates :title, presence: true, uniqueness: true
