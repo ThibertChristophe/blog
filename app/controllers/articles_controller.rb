@@ -2,13 +2,14 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    # utilisation avec un scope de Article
+    # utilisation avec un scope de Article ( du model )
     @articles = Article.published.all
     # exemple avec un parametre
     # @articles = Article.online(true).all
     # exemple si on veut que d'office on prend la categorie liée
     # Permet de ne pas faire de requete supplementaire
-    # @articles = Article.includes(:category).all
+    # il recuperera les categories et tags associé a chaque article
+    # @articles = Article.includes(:category, :tags).all
   end
 
   def show; end

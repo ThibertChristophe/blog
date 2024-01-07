@@ -1,11 +1,16 @@
 class Article < ApplicationRecord
+  # Relations
   belongs_to :category, counter_cache: true
   has_many :comments
   has_and_belongs_to_many :tags
+  # Relation polymorphic
+  has_many :pictures, as: :imageable
 
+  # Validations
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true, length: { minimum: 10 }
 
+  # Filtres
   # scope par defaut
   default_scope { order(created_at: :asc) }
 

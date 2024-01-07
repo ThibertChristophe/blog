@@ -6,6 +6,9 @@
         <% if article.category %>
           <span class="badge rounded-pill text-bg-info mb-2"><%= article.category.name %></span>
         <% end %>
+        <% article.tags.each do |tag| %>
+          <span class="badge rounded-pill text-bg-secondary mb-2"><%= tag.name %></span>
+        <% end %>
         <h3 class="card-title">
           <%= link_to article.title, article %>
         </h3>

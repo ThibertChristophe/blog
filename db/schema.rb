@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_06_224056) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_07_204824) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -47,6 +47,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_06_224056) do
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "name"
+    t.string "imageable_type"
+    t.integer "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable"
   end
 
   create_table "tags", force: :cascade do |t|
